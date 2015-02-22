@@ -2,6 +2,7 @@
 
 body{
  /*background-image:url('images/matematicas_maths_ecuaciones.jpg');*/
+  background-image:url("images/fondo.jpg");
 }
 
 #calc{
@@ -49,30 +50,6 @@ body{
 	padding-left:10px;
 }
 
-#cero{
-	cursor:pointer;
-	margin-left: 0px;
-	float: left;
-	width:106px;
-	height:50px;
-	text-align:center;
-	font-size:2.5em;
-	font-weight:bold;
-	border:3px solid black;
-	background:#2ECCFA;
-	color:#000000;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
- box-shadow: -3px -3px 3px rgba(105,105,105, 0.9);
-}
-
-#punto{
-	width: 30%;
-	margin-left: 0px;
-	float: left;
-}
-
 #uno,#dos,#tres{
 	width: 30%;
 	margin-left: 0px;
@@ -91,7 +68,14 @@ body{
 	float: left;
 }
 
-#uno, #dos, #tres, #cuatro, #cinco, #seis, #siete, #ocho, #nueve, #punto{
+#cero, #punto, #signo{
+ width: 30%;
+	margin-left: 0px;
+	float: left;
+
+}
+
+#uno, #dos, #tres, #cuatro, #cinco, #seis, #siete, #ocho, #nueve, #punto, #cero{
 	cursor:pointer;
 	width:50px;
 	height:50px;
@@ -107,7 +91,24 @@ body{
  box-shadow: -3px -3px 3px rgba(105,105,105, 0.9);
 }
 
-#cero:hover,#uno:hover, #dos:hover, #tres:hover, #cuatro:hover, #cinco:hover, #seis:hover, #siete:hover,#ocho:hover,#nueve:hover,#punto:hover{
+#signo {
+ cursor:pointer;
+	width:50px;
+	height:50px;
+	text-align:center;
+	font-size:1.9em;
+	font-weight:bold;
+	border:3px solid black;
+	background:#2ECCFA;
+	color:#000000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+ box-shadow: -3px -3px 3px rgba(105,105,105, 0.9);
+
+}
+
+#cero:hover,#uno:hover, #dos:hover, #tres:hover, #cuatro:hover, #cinco:hover, #seis:hover, #siete:hover,#ocho:hover,#nueve:hover,#punto:hover, #cero:hover, #signo:hover{
 	background:#81DAF5;
 }
 
@@ -133,7 +134,7 @@ body{
 	background:#2E2E2E;
 }
 
-#suma:active, #resta:active , #division:active , #mult:active, #C:active, #porc:active, #sqrt:active{
+#suma:active, #resta:active , #division:active , #mult:active, #C:active, #porc:active, #igual:active, #sqrt:active{
 	transform:rotate(360deg);
 	-moz-transform:rotate(360deg); /* Firefox 4 */
 	-webkit-transform:rotate(360deg); /* Safari and Chrome */
