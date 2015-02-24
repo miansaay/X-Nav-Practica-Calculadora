@@ -126,20 +126,54 @@ $(document).ready(function() {
    });
   
   $("input").keyup(function() {
-   //Op1 = $("#resultado").val();
-   //console.log(Op1);
    var valor = $(this).val();
-   console.log(valor.split("="));
-   var Op = valor.split("=")[0];
-   console.log(Op.split("+"));
-   if (Op.split("+")) {
-      Op1 = Op.split("+")[0];
-      operacion = "+";
-      console.log(Op1);
-   } else if (Op.split("-")) {
-     Op1 = Op.split("-")[0];
-     console.log(Op1);
-     operacion = "-";
+   if (valor.split("=").length == 2){
+    console.log(valor.split("="));
+    var Op = valor.split("=")[0];
+    console.log(Op.split("+"));
+    if (Op.split("+").length == 2) {
+       Op1 = Op.split("+")[0];
+       operacion = "+";
+       console.log(Op1);
+       result();
+    } else if (Op.split("*").length == 2) {
+       Op1 = Op.split("*")[0];
+       console.log(Op1);
+       operacion = "*";
+       result();
+
+    } else if (Op.split("-").length == 3) {
+       Op1 = Op.split("-")[1] *(-1);
+       console.log(Op1);
+       operacion = "-";
+       result(); 
+
+    } else if (Op.split("/").length == 2) {
+       Op1 = Op.split("/")[0];
+       console.log(Op1);
+       operacion = "/";
+       result();
+    } else if (Op.split("-").length == 2) {
+       Op1 = Op.split("-")[0];
+       console.log(Op1);
+       operacion = "-";
+       result();     
+    }
+         
+   } else if (valor.split("%").length == 2) {
+      var Op = valor.split("%")[0];
+      console.log(Op);
+      var resultado = Op/100;
+  	   $("#resultado").val(resultado);
+		    Op="";
+
+   } else if (valor.split("v").length == 2){
+      var Op = valor.split("v")[0];
+      console.log(Op);
+      var resultado = Math.sqrt(Op);
+  	   $("#resultado").val(resultado);
+		    Op="";
+
    }
   });
 
