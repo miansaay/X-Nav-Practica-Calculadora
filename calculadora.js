@@ -95,7 +95,7 @@ $(document).ready(function() {
 
   $("#signo").click(function() {
 		 Op1= $("#resultado").val();
-   console.log(Op1);
+   //console.log(Op1);
 		 punto = Boolean(0);
   	$("#resultado").val(Op1 + "-");
   });
@@ -128,48 +128,48 @@ $(document).ready(function() {
   $("input").keyup(function() {
    var valor = $(this).val();
    if (valor.split("=").length == 2){
-    console.log(valor.split("="));
+    //console.log(valor.split("="));
     var Op = valor.split("=")[0];
-    console.log(Op.split("+"));
+    //console.log(Op.split("+"));
     if (Op.split("+").length == 2) {
        Op1 = Op.split("+")[0];
        operacion = "+";
-       console.log(Op1);
+       //console.log(Op1);
        result();
     } else if (Op.split("*").length == 2) {
        Op1 = Op.split("*")[0];
-       console.log(Op1);
+       //console.log(Op1);
        operacion = "*";
        result();
 
     } else if (Op.split("-").length == 3) {
        Op1 = Op.split("-")[1] *(-1);
-       console.log(Op1);
+       //console.log(Op1);
        operacion = "-";
        result(); 
 
     } else if (Op.split("/").length == 2) {
        Op1 = Op.split("/")[0];
-       console.log(Op1);
+       //console.log(Op1);
        operacion = "/";
        result();
     } else if (Op.split("-").length == 2) {
        Op1 = Op.split("-")[0];
-       console.log(Op1);
+       //console.log(Op1);
        operacion = "-";
        result();     
     }
          
    } else if (valor.split("%").length == 2) {
       var Op = valor.split("%")[0];
-      console.log(Op);
+      //console.log(Op);
       var resultado = Op/100;
   	   $("#resultado").val(resultado);
 		    Op="";
 
    } else if (valor.split("v").length == 2){
       var Op = valor.split("v")[0];
-      console.log(Op);
+      //console.log(Op);
       var resultado = Math.sqrt(Op);
   	   $("#resultado").val(resultado);
 		    Op="";
@@ -178,21 +178,21 @@ $(document).ready(function() {
   });
 
   $("#igual").click(result = function() {
-    console.log(Op1);
+    //console.log(Op1);
     if (Op1 == "") {
       $("#resultado").val("Syntax ERROR");
       Op1="";
     } else {
 		    Op1 = parseFloat(Op1);
       res = $("#resultado").val();
-      console.log(res.split(operacion));
+      //console.log(res.split(operacion));
       minun = res.split(operacion);
       if (minun[0] == ""){
        Op2 = parseFloat(minun[2]);
-       console.log(Op2);
+       //console.log(Op2);
       }else{
        Op2 = parseFloat(minun[1]);
-       console.log(Op2);
+       //console.log(Op2);
       }
 		     if (operacion =="+")
 			      var resultado = Op1+Op2;
@@ -202,7 +202,7 @@ $(document).ready(function() {
 			      var resultado = Op1*Op2;
 		     else if (operacion == "/")
 			      var resultado = Op1/Op2;
-       console.log(resultado);
+       //console.log(resultado);
   	    $("#resultado").val(resultado);
 		     Op1="";
        Op2="";
